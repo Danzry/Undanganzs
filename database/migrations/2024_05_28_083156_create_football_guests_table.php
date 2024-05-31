@@ -16,7 +16,11 @@ return new class extends Migration
             $table->foreignId('user_id')->constrained()->cascadeOnDelete();
             $table->string('guest_name');
             $table->string('phone_number', 30)->nullable();
-            $table->timestamp('confirmation_at')->nullable();
+            $table->tinyInteger('invitation')->default(0);
+            $table->enum('status', ['accepted', 'pending', 'declined'])->default('pending');
+            $table->timestamp('response_at')->nullable();
+            $table->integer('guests_attended')->default(0);
+            $table->text('reminder')->default('0');
             $table->timestamps();
         });
     }
