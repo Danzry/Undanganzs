@@ -10,7 +10,13 @@ class FootballGuest extends Model
     use HasFactory;
 
     protected $fillable = [
-        'name',
-        'phone',
+        'user_id',    
+        'guest_name',
+        'phone_number',
+        'invitation',
+        'status',
+        'response_at',
+        'guests_attended',
+        'reminder',
     ];
 }

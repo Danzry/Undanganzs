@@ -1,6 +1,8 @@
 <?php
 use App\Http\Controllers\UserEventController;
 use App\Http\Controllers\SocialLoginController;
+use App\Http\Controllers\FootballGuestController;
+use App\Livewire\FootballAdd;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -35,7 +37,17 @@ Route::middleware([
 
     // Route::get('/event', [UserEventController::class, 'index'])->name('event');
 
-    Route::get('/football', function () {
-        return view('users.events.football');
-    })->name('football');
+    // Route::get('/football/add-guest', function () {
+    //     return view('users.events.football.actions.add');
+    // })->name('football.add');
+
+    // Route::view('/football/add-guest', function () {
+    //     return view('users.events.football.actions.add');
+    // })->name('football.add');
+
+    Route::view('/football', 'users.events.football')->name('football');
+    Route::post('/football', [FootballAdd::class, 'create']);
+    
 });
+
+Route::fallback(fn () => redirect('/'));

@@ -29,7 +29,9 @@ final class EventTable extends PowerGridComponent
                 ->striped()
                 ->type(Exportable::TYPE_XLS, Exportable::TYPE_CSV),
             Header::make()
-                ->showToggleColumns(),
+                ->showSearchInput(),
+            // Header::make()
+            //     ->showToggleColumns(),
             Footer::make()
                 ->showPerPage()
                 ->showRecordCount(),

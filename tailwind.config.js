@@ -5,10 +5,10 @@ import typography from '@tailwindcss/typography';
 /** @type {import('tailwindcss').Config} */
 export default {
 
-    darkMode: 'class', 
+    darkMode: 'media', 
 
     presets: [
-        require('./vendor/tallstackui/tallstackui/tailwind.config.js') 
+        require('./vendor/tallstackui/tallstackui/tailwind.config.js'),
     ],
 
     content: [
@@ -17,7 +17,7 @@ export default {
         './storage/framework/views/*.php',
         './resources/views/**/*.blade.php',
         'node_modules/preline/dist/*.js',
-        './vendor/tallstackui/tallstackui/src/**/*.php', 
+        './vendor/tallstackui/tallstackui/src/**/*.php'
     ],
 
     theme: {

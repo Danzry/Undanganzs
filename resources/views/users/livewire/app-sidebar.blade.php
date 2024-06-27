@@ -5,7 +5,7 @@
     -translate-x-full transition-all duration-300 transform
     w-[260px]
     hidden
-    fixed inset-y-0 start-0 z-[60]
+    fixed inset-y-0 start-0 
     bg-white border-e border-gray-200
     sm:block lg:translate-x-0 lg:end-auto lg:bottom-0
     dark:bg-gray-800 dark:border-gray-700

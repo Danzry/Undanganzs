@@ -12,9 +12,15 @@
         <link rel="preconnect" href="https://fonts.bunny.net">
         <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
 
+        {{-- Intl-Tel-Input Style--}}
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@23.0.10/build/css/intlTelInput.css">
+
         <!-- Scripts -->
         <tallstackui:script />
         @vite(['resources/css/app.css', 'resources/js/app.js'])
+        
+         {{-- Intl-Tel-Input Script--}}
+         <script src="https://cdn.jsdelivr.net/npm/intl-tel-input@23.0.10/build/js/intlTelInput.min.js"></script>
 
         <!-- Styles -->
         @livewireStyles
@@ -23,13 +29,14 @@
 
     <body class="font-sans antialiased">
         <x-banner />
+        <x-ts-toast /> 
 
         <div class="min-h-screen bg-gray-100 dark:bg-gray-900">
             {{-- @livewire('navigation-menu') --}}
             @livewire('app-header')
             @livewire('app-breadcrumb')
             @livewire('app-sidebar')
-
+            
             <!-- Page Heading -->
             {{-- @if (isset($header))
                 <header class="bg-white shadow dark:bg-gray-800">
@@ -48,6 +55,7 @@
         @stack('modals')
 
         @livewireScripts
+        @livewire('wire-elements-modal')
     </body>
 
 </html>
